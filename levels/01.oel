@@ -1,0 +1,13 @@
+<level width="320" height="240">
+  <Background exportMode="GridRectangles" />
+  <Tiles exportMode="GridRectangles">
+    <rect x="0" y="0" w="20" h="1" />
+    <rect x="0" y="1" w="1" h="14" />
+    <rect x="1" y="14" w="19" h="1" />
+    <rect x="19" y="1" w="1" h="13" />
+  </Tiles>
+  <Objects>
+    <Player id="1" x="272" y="304" />
+    <Player id="0" x="128" y="208" />
+  </Objects>
+</level>
