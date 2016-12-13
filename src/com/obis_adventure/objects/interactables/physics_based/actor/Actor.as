@@ -16,9 +16,11 @@ package com.obis_adventure.objects.interactables.physics_based.actor
 		
 		private var acc_x:Number = 6;
 		private var fric_x:Number = 96;
-		private var JUMP_HEIGHT:Number = 7;
+		private var JUMP_HEIGHT:Number = 7.5;
 		protected var isMoving:Boolean = false;
 		protected var onGround:Boolean = false;
+		protected var wasLeft:Boolean = false;
+		protected var wasRight:Boolean = false;
 		
 		
 		public function Actor(x:int = 0, y:int = 0, graphic:Graphic = null, mask:Mask = null):void { 
@@ -50,10 +52,6 @@ package com.obis_adventure.objects.interactables.physics_based.actor
 		
 		protected function jump():void {
 			vsp = -JUMP_HEIGHT;
-			
-			//not working...(tryind to make it so jump doesn't continue when colliding with solid on roof)
-			if (collide("solid", x, y - 1))
-				vsp = 0;
 			
 			onGround = false;
 		}

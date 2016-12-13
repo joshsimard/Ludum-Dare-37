@@ -1,6 +1,7 @@
 package com.obis_adventure.program
 {
 	import com.obis_adventure.worlds.Level;
+	import com.obis_adventure.worlds.menus.MainMenu;
 	//import com.rename.worlds.menus.MainMenu;
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -17,13 +18,15 @@ package com.obis_adventure.program
 			super(Settings.SCREEN_WIDTH, Settings.SCREEN_HEIGHT, Settings.TARGET_FPS, Settings.IS_FPS_LOCKED);
 			FP.screen.scale = Settings.SCREEN_SCALE;
 			
-			FP.console.enable();
+			//FP.console.enable();
 		}
 		
 		override public function init():void 
 		{
-			//Sounds.playSound("main_theme", true);
-			FP.world = new Level(0);
+			var soundfx:Sfx = new Sfx(Assets.THEME_LUCKY);
+			soundfx.play();
+			soundfx.loop();
+			FP.world = new MainMenu();
 		}
 	}
 }

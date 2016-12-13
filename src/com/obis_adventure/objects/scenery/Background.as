@@ -11,9 +11,9 @@ package com.obis_adventure.objects.scenery
 	{
 		private var backdrop:Backdrop;
 		
-		public function Background() 
+		public function Background(x:int = 0, y:int = 0) 
 		{
-			backdrop = new Backdrop(Assets.SKY_NIGHT, true, true);
+			backdrop = new Backdrop(Assets.FROSTY, true, true);
 			
 			graphic = backdrop;
 			
@@ -22,6 +22,11 @@ package com.obis_adventure.objects.scenery
 			super(x, y, graphic);
 		}
 		
+		override public function update():void
+		{
+			backdrop.scrollY = 0.5;
+			super.update();
+		}
 	}
 
 }

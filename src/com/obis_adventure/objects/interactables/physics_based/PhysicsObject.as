@@ -11,7 +11,7 @@ package com.obis_adventure.objects.interactables.physics_based
 	
 	public class PhysicsObject extends Entity { 
 		
-		protected static const GRAVITY:Number = 24;
+		protected static const GRAVITY:Number = 15;
 		
 		protected var isGravityActive:Boolean = true;
 		
@@ -24,9 +24,7 @@ package com.obis_adventure.objects.interactables.physics_based
 		public var vsp:Number = 0;
 		public var hsp:Number = 0;
 		
-		public function PhysicsObject() {
-	
-		}
+		public function PhysicsObject() {}
 	
 		override public function update():void { 
 			
@@ -50,7 +48,6 @@ package com.obis_adventure.objects.interactables.physics_based
 			if (!collide("Solid", x, y + 1)) { 
 				vsp = FP.clamp(vsp + (GRAVITY * FP.elapsed), -MAXSPEED_Y, MAXSPEED_Y);
 			}
-			
 		}
 	}
 }
